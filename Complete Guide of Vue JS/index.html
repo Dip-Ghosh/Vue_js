@@ -1,0 +1,45 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script src="js/vue.js"></script>
+      <title>Document</title>  
+  </head>
+  <body>
+
+        <div id="app">
+                <p>{{ greeting }}</p>
+                <h1>{{ h }}</h1>
+                <h2> {{ array[1] }}</h2>
+                <h3>{{ obj.car +" " +  obj.bike }}</h3>
+                <p>is it true:{{  isItTrue  ?"Yes" : "NO" }}</p>
+                <p>{{ func() }}</p>
+               
+        </div>
+    
+      
+  </body>
+
+  <script>
+        new Vue({
+            el:"#app",
+            data:{
+                greeting:'Hello Guys!',
+                h:'i am dip',
+                isItTrue:true,
+                array:['Dip','Bashar'],
+                obj:{
+                    car:'honda',
+                    bike:'hero Honda'
+                },
+                func:()=>{
+                    return 'Message from function.'
+                }
+            }
+
+        });
+    
+    </script>
+  </html>
