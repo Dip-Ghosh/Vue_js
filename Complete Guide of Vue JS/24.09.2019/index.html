@@ -1,0 +1,42 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script src="js/vue.js"></script>
+      <title>Document</title>  
+  </head>
+  <body>
+
+        <div id="app">
+               
+            <p v-once>{{ title }}</p>
+               <p>{{ sayHello() }}  
+                   <a v-bind:href="link">Google</a>
+               </p>
+               
+        </div>
+    
+      
+  </body>
+
+  <script>
+        new Vue({
+            el:"#app",
+            data:{
+              title:'Hello World!',
+              link:'https://google.com'
+            },
+            methods:{
+                sayHello:function()
+                {
+                    this.title = "Bangla Cat";
+                    return this.title;
+                }
+            }
+
+        });
+    
+    </script>
+  </html>
