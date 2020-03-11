@@ -1,38 +1,38 @@
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <script src="js/vue.js"></script>
-      <title>Document</title>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
   </head>
   <body>
-
-        <div id="dip">
-
-                <input type="text" v-on:input="changeTitle">
-                <p>{{ greeting }}</p>
-                
-               
-        </div>
-    
-      
+    <div id="app">
+      <p>{{ greetings }}</p>
+      <p> is it True : {{ is_it_true ? array[0] : array[1] }}</p>
+      <p>This {{ object.car }} is buying {{ object.buy }}.</p>
+      <p>{{ func() }}</p>
+    </div>
   </body>
 
   <script>
-        new Vue({
-            el:"#dip",
-            data:{
-                title:'Hello Guys!',
-            },
-            methods: {
-                changeTitle( event){
-                    return this.title = event.target.value;
-                }
-            },
+    new Vue({
+      el: "#app",
+      data: {
+        greetings: "Hello Guys",
+        is_it_true: true,
+        array : ['Dip','Dhrubo'],
+        object : {
+            car : 'Ferrari',
+            buy : 'Today'
+        },
+        func : ()=>{
+            return " This is ES6."
+        }
 
-        });
-    
-    </script>
-  </html>
+      }
+    });
+  </script>
+</html>
